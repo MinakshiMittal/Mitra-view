@@ -1,6 +1,6 @@
 import "./VideoCard.css";
 import { Link } from "react-router-dom";
-// import { VideoPlay } from "../VideoPlay";
+import { VideoPlay } from "../VideoPlay";
 
 export const VideoCard = ({ video, noDetail }) => {
   console.log("video", video);
@@ -18,16 +18,16 @@ export const VideoCard = ({ video, noDetail }) => {
                     height: "auto",
                     flexGrow: "1",
                   }}
-                  src={`https://img.youtube.com/vi/${video.videoURL}/maxresdefault.jpg`}
+                  src={`https://img.youtube.com/vi/${video?.videoURL}/maxresdefault.jpg`}
                   alt=""
                 />
-                <p style={{ color: "#ffffff6e" }}>{video.name}</p>
+                {/* <p style={{ color: "#ffffff6e" }}>{video.name}</p> */}
               </div>
             </div>
           </div>
         </Link>
       )}
-      {/* {!noDetail && <VideoPlay video={video} />} */}
+      {!noDetail && <VideoPlay video={video} />}
     </>
   );
 };

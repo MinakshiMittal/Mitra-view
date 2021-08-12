@@ -6568,6 +6568,7 @@
     "jest-snapshot" "^26.6.2"
 
 "jest-resolve@*":
+  "integrity" "sha512-tRAz2bwraHufNp+CCmAD8ciyCpXCs1NQxB5EJAmtCFy6BN81loFEGWKzYu26Y62lAJJe4X4jg36Kf+NsQyiStQ=="
   "version" "26.6.0"
   dependencies:
     "@jest/types" "^26.6.0"
@@ -7144,6 +7145,16 @@
   "version" "1.4.0"
   dependencies:
     "js-tokens" "^3.0.0 || ^4.0.0"
+
+"lord-icon-element@^2.0.2":
+  "integrity" "sha512-46wr9qHY0kopPBvEfeKgHHfJvp8N/JJlwpU2PUDwzO3yoYRzsjwjGqtgISBr17Cmpjfc/vg2Rxk314L+PBasHg=="
+  "resolved" "https://registry.npmjs.org/lord-icon-element/-/lord-icon-element-2.0.2.tgz"
+  "version" "2.0.2"
+
+"lottie-web@^5.7.13":
+  "integrity" "sha512-6iy93BGPkdk39b0jRgJ8Zosxi8QqcMP5XcDvg1f0XAvEkke6EMCl6BUO4Lu78dpgvfG2tzut4QJ+0vCrfbrldQ=="
+  "resolved" "https://registry.npmjs.org/lottie-web/-/lottie-web-5.7.13.tgz"
+  "version" "5.7.13"
 
 "lower-case@^2.0.2":
   "integrity" "sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg=="

@@ -2,7 +2,7 @@ export const MainMenu = () => {
   return (
     <>
       <img
-        src="./images/hands-peace-bnw.png"
+        src="https://cdn.pixabay.com/photo/2018/04/03/00/48/fingers-3285615_1280.png"
         alt="logo"
         className="hero-image"
       />
