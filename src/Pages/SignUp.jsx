@@ -1,18 +1,18 @@
-import "./Login.css";
-import { useAuth } from "../../Contexts";
+import { useAuth } from "../Contexts";
 import { useState } from "react";
 
-export const Login = () => {
-  const { isUserLogin, loginUserWithCredentials, logout } = useAuth();
-
+export const SignUp = () => {
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const loginHandler = (event) => {
-    event.preventDefault();
-    isUserLogin ? logout() : loginUserWithCredentials(email, password);
-  };
+  const { signUpUserWithDetails } = useAuth();
 
+  const signUpHandler = async (event) => {
+    event.preventDefault();
+    signUpUserWithDetails(firstName, lastName, email, password);
+  };
   return (
     <div className="login-page">
       <div className="background-image-container">
@@ -22,8 +22,20 @@ export const Login = () => {
         />
       </div>
       <div className="form-container">
-        <h1 className="">Log In</h1>
+        <h1 className="">Sign Up</h1>
         <form className="login-form">
+          <label>First Name</label>
+          <input
+            type="text"
+            placeholder="Your first name.."
+            onChange={(event) => setFirstName(event.target.value)}
+          />
+          <label>Last Name</label>
+          <input
+            type="text"
+            placeholder="Your last name"
+            onChange={(event) => setLastName(event.target.value)}
+          />
           <label>Username</label>
           <input
             type="email"
@@ -36,8 +48,8 @@ export const Login = () => {
             placeholder="Enter your password"
             onChange={(event) => setPassword(event.target.value)}
           />
-          <button class="button primary-btn" onClick={loginHandler}>
-            Log In
+          <button class="button primary-btn" onClick={signUpHandler}>
+            Sign Up
           </button>
         </form>
       </div>

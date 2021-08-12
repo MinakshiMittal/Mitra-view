@@ -1,0 +1,10 @@
+@import url("https://mitra-ui.netlify.app/components.css");
+
+.card-container {
+  border-radius: 0;
+  border: none;
+}
+
+.card-container:hover {
+  box-shadow: 0.4px 0.4px 3px #f89dc0c7;
+}

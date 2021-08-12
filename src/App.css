@@ -1,1 +1,51 @@
-@import url("https://mitra-ui.netlify.app/components.css");
+@import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css");
+@import url("https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://mitra-ui.netlify.app/styles.css");
+
+body,
+html {
+  margin: 0;
+  background-color: #161625;
+  display: block;
+}
+
+.App {
+  font-family: sans-serif;
+  display: grid;
+  grid-template-areas: "head head" "nav main" "nav main";
+  grid-template-columns: 6% 1fr;
+  grid-template-rows: 1% 1fr;
+  position: relative;
+  background-color: #161625;
+  font-family: "Varela Round", sans-serif;
+}
+
+.page-main-menu {
+  background-color: #2e1e30;
+  color: #c34d76;
+}
+
+.component-list {
+  width: 8%;
+  border: none;
+  background-color: #1e1e30;
+  margin-top: 0;
+}
+
+.component-display {
+  grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10vh;
+  justify-content: center;
+  margin-left: 2%;
+}
+
+iframe {
+  width: 20rem;
+}
+
+.video-image:hover {
+  opacity: 0.2;
+}
