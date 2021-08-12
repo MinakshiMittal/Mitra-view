@@ -1,0 +1,45 @@
+.login-page {
+  background-color: teal;
+}
+
+.background-image-container > img {
+  height: 100vh;
+  position: relative;
+}
+
+.form-container {
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input {
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+}
+
+label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: yellow;
+}
+
+.primary-btn {
+  width: 30%;
+  align-self: center;
+}
