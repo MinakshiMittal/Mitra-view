@@ -1,45 +1,78 @@
 .login-page {
-  background-color: teal;
+  /* background-color: black; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-heading {
+  color: #c34d76;
+  font-weight: 900;
+  font-size: 2.8rem;
 }
 
 .background-image-container > img {
   height: 100vh;
   position: relative;
+  flex: 60%;
+  max-width: 85%;
 }
 
 .form-container {
   position: absolute;
-  top: 5rem;
-  right: 5rem;
-  border: 2px solid black;
-  border-radius: 1rem;
-  padding: 2rem;
+  right: 2.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 37%;
+  box-shadow: 0.1rem 0.1rem 0.5rem #c34d76;
+  flex: 40%;
+  max-width: 40%;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 70%;
 }
 
 input {
   padding: 0.7rem;
   border-radius: 0.5rem;
-  margin: 0.5rem;
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  width: 100%;
 }
 
 label {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: yellow;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #c34d76;
 }
 
-.primary-btn {
-  width: 30%;
+.button.primary-btn {
+  background-color: #c34d76;
   align-self: center;
+  width: 40%;
+  border: none;
+  font-family: "Varela Round";
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.signup-content,
+.login-content {
+  text-align: center;
+  font-size: 1.1rem;
+  color: white;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-bottom: 0.3rem;
+}
+
+.signup-link,
+.login-link {
+  color: #c34d76;
+  font-weight: 900;
+  cursor: pointer;
 }

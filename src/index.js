@@ -4,14 +4,32 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
-import { AuthProvider, VideoProvider } from "./Contexts";
+import {
+  AuthProvider,
+  VideoProvider,
+  HistoryProvider,
+  WatchLaterProvider,
+  LikedVideosProvider,
+  DislikedVideosProvider,
+  PlaylistsProvider,
+} from "./Contexts";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <AuthProvider>
         <VideoProvider>
-          <App />
+          <HistoryProvider>
+            <LikedVideosProvider>
+              <PlaylistsProvider>
+                <DislikedVideosProvider>
+                  <WatchLaterProvider>
+                    <App />
+                  </WatchLaterProvider>
+                </DislikedVideosProvider>
+              </PlaylistsProvider>
+            </LikedVideosProvider>
+          </HistoryProvider>
         </VideoProvider>
       </AuthProvider>
     </Router>

@@ -1,4 +1,9 @@
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Contexts";
+
 export const MainMenu = () => {
+  const { isUserLogin, logout } = useAuth();
+  const navigate = useNavigate();
   return (
     <>
       <img
@@ -7,10 +12,10 @@ export const MainMenu = () => {
         className="hero-image"
       />
       <div
-        style={{ color: "#c34d76", fontSize: "2rem", flexGrow: "1" }}
+        style={{ color: "white", fontSize: "2rem", flexGrow: "1" }}
         className="hero-name"
       >
-        Mitra Play
+        MITRA PLAY
       </div>
       {/* <a href="/" style={{ color: "#c34d76" }} className="get-started">
           Get Started
@@ -18,9 +23,21 @@ export const MainMenu = () => {
       {/* <a href="/" style={{ color: "#c34d76" }} className="docs">
           Docs
         </a> */}
-      <a href="/" style={{ color: "#c34d76" }} className="github">
-        <i className="fa fa-github"></i>
-      </a>
+      {isUserLogin && (
+        <i
+          className="fas fa-sign-out-alt"
+          style={{ marginRight: "2rem", cursor: "pointer" }}
+          onClick={() => logout()}
+        ></i>
+      )}
+      {!isUserLogin && (
+        <button
+          className="button primart-btn"
+          onClick={() => navigate("/login")}
+        >
+          Login
+        </button>
+      )}
     </>
   );
 };

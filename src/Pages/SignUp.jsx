@@ -1,11 +1,15 @@
 import { useAuth } from "../Contexts";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Watch from "../assets/Watch.svg";
 
 export const SignUp = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
+  const navigate = useNavigate();
 
   const { signUpUserWithDetails } = useAuth();
 
@@ -16,13 +20,10 @@ export const SignUp = () => {
   return (
     <div className="login-page">
       <div className="background-image-container">
-        <img
-          src="https://cdn.pixabay.com/photo/2017/07/19/16/44/question-2519654_1280.png"
-          alt="background"
-        />
+        <img src={Watch} alt="background" />
       </div>
       <div className="form-container">
-        <h1 className="">Sign Up</h1>
+        <h1 className="form-heading">Sign Up</h1>
         <form className="login-form">
           <label>First Name</label>
           <input
@@ -51,6 +52,12 @@ export const SignUp = () => {
           <button class="button primary-btn" onClick={signUpHandler}>
             Sign Up
           </button>
+          <p className="login-content">
+            Already have an account?{" "}
+            <span className="login-link" onClick={() => navigate("/login")}>
+              Log In
+            </span>
+          </p>
         </form>
       </div>
     </div>

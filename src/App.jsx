@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Login, SignUp, VideoListingPage, VideoDetail } from "./Pages";
-import { MainMenu, SideNav } from "./Components";
+import { Login, SignUp, VideoListingPage, VideoDetail, Library } from "./Pages";
+import { MainMenu, SideNav, PrivateRoute } from "./Components";
 
 function App() {
   return (
@@ -24,8 +24,9 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/videos" element={<VideoListingPage />} />
+          <Route path="/" element={<VideoListingPage />} />
           <Route path="/video/:videoId" element={<VideoDetail />} />
+          <PrivateRoute path="/library" element={<Library />} />
         </Routes>
       </div>
     </div>

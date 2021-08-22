@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
 import LightThemeIcon from "../../assets/LightThemeIcon.svg";
+import DarkThemeIcon from "../../assets/DarkThemeIcon.svg";
 import "./SideNav.css";
 
 defineLordIconElement(loadAnimation);
@@ -14,12 +15,13 @@ export const SideNav = () => {
       <Link to="/">
         <HomeIcon className="icon-style" />
       </Link>
-      <Link to="/liked-videos" style={{ textDecoration: "none" }}>
+      <i className="fas fa-photo-video icon-style"></i>
+      {/* <Link to="/liked-videos" style={{ textDecoration: "none" }}>
         <i className="far fa-thumbs-up icon-style"></i>
       </Link>
-      {/* <Link to="/history" style={{ textDecoration: "none" }}>
+      <Link to="/history" style={{ textDecoration: "none" }}>
         <i className="fas fa-history icon-style"></i>
-      </Link> */}
+      </Link>
       <Link to="/watch-later-videos" style={{ textDecoration: "none" }}>
         <i
           style={{
@@ -31,8 +33,8 @@ export const SideNav = () => {
       <Link to="/playlist">
         <PlaylistIcon className="icon-style" />
       </Link>
-
-      <img src={LightThemeIcon} alt="light theme icon" className="icon-style" />
+      <img src={DarkThemeIcon} alt="light theme icon" className="icon-style" />
+      <img src={LightThemeIcon} alt="light theme icon" className="icon-style" /> */}
     </div>
   );
 };
