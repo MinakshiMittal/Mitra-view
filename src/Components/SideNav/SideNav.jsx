@@ -1,10 +1,10 @@
 import { HomeIcon } from "../Icons/HomeIcon";
-import { PlaylistIcon } from "../Icons/PlaylistIcon";
+// import { PlaylistIcon } from "../Icons/PlaylistIcon";/
 import { Link } from "react-router-dom";
 import { loadAnimation } from "lottie-web";
 import { defineLordIconElement } from "lord-icon-element";
-import LightThemeIcon from "../../assets/LightThemeIcon.svg";
-import DarkThemeIcon from "../../assets/DarkThemeIcon.svg";
+// import LightThemeIcon from "../../assets/LightThemeIcon.svg";
+// import DarkThemeIcon from "../../assets/DarkThemeIcon.svg";
 import "./SideNav.css";
 
 defineLordIconElement(loadAnimation);
@@ -15,7 +15,9 @@ export const SideNav = () => {
       <Link to="/">
         <HomeIcon className="icon-style" />
       </Link>
-      <i className="fas fa-photo-video icon-style"></i>
+      <Link to="/library">
+        <i className="fas fa-photo-video icon-style"></i>
+      </Link>
       {/* <Link to="/liked-videos" style={{ textDecoration: "none" }}>
         <i className="far fa-thumbs-up icon-style"></i>
       </Link>

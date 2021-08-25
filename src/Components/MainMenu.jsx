@@ -33,6 +33,7 @@ export const MainMenu = () => {
       {!isUserLogin && (
         <button
           className="button primart-btn"
+          style={{ marginRight: "2rem" }}
           onClick={() => navigate("/login")}
         >
           Login

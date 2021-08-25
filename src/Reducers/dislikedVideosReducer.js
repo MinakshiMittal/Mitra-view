@@ -13,6 +13,18 @@ export const dislikedVideosReducer = (state, action) => {
         error: "Something Went Wrong",
       };
 
+    case "ADD_TO_DISLIKED_VIDEOS":
+      return {
+        ...state,
+        dislikedVideos: [action.payload.dislikedVideos],
+      };
+
+    case "REMOVE_FROM_DISLIKED_VIDEOS":
+      return {
+        ...state,
+        dislikedVideos: [...action.payload.dislikedVideos],
+      };
+
     default:
       return state;
   }

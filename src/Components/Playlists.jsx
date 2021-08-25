@@ -17,14 +17,14 @@ export const Playlists = () => {
         {playlists.map((playlist) => {
           console.log("playlist", playlist);
           return (
-            <>
+            <div key={playlist._id}>
               <h2>{playlist.name}</h2>
               {playlist.videos.map((video) => {
                 return (
                   <VideoCard video={video.video} noDetail key={video._id} />
                 );
               })}
-            </>
+            </div>
           );
         })}
       </div>

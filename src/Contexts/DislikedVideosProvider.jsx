@@ -40,7 +40,7 @@ export const DislikedVideosProvider = ({ children }) => {
         dispatch({ type: "FETCH_DISLIKED_VIDEOS_ERROR" });
       }
     })();
-  }, [dispatch, token]);
+  }, [dispatch, token, state]);
 
   return (
     <DislikedVideosContext.Provider value={{ state, dispatch }}>

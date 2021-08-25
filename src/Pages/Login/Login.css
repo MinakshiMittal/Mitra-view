@@ -1,7 +1,6 @@
 .login-page {
-  /* background-color: black; */
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
@@ -12,10 +11,11 @@
 }
 
 .background-image-container > img {
-  height: 100vh;
+  height: 88vh;
   position: relative;
-  flex: 60%;
-  max-width: 85%;
+  flex: 50%;
+  max-width: 55%;
+  margin-left: 4rem;
 }
 
 .form-container {
@@ -27,8 +27,9 @@
   align-items: center;
   width: 37%;
   box-shadow: 0.1rem 0.1rem 0.5rem #c34d76;
-  flex: 40%;
+  flex: 45%;
   max-width: 40%;
+  margin-right: 2rem;
 }
 
 .login-form {
@@ -75,4 +76,8 @@ label {
   color: #c34d76;
   font-weight: 900;
   cursor: pointer;
+}
+
+.component-display {
+  justify-content: flex-start;
 }

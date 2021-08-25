@@ -9,7 +9,7 @@ export const VideoCard = ({ video, noDetail }) => {
       {noDetail && (
         <Link to={`/video/${video._id}`}>
           <div className="card-demo">
-            <div className="card-with-badge-demo">
+            <div className="card-with-badge-demo  video-card">
               <div className="card-container">
                 <img
                   className="video-image"
@@ -21,7 +21,7 @@ export const VideoCard = ({ video, noDetail }) => {
                   src={`https://img.youtube.com/vi/${video?.videoURL}/maxresdefault.jpg`}
                   alt=""
                 />
-                {/* <p style={{ color: "#ffffff6e" }}>{video.name}</p> */}
+                <p style={{ color: "#ffffff6e" }}>{video.name}</p>
               </div>
             </div>
           </div>

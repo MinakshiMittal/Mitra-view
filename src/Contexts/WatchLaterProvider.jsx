@@ -40,7 +40,7 @@ export const WatchLaterProvider = ({ children }) => {
         dispatch({ type: "FETCH_WATCH_LATER_ERROR" });
       }
     })();
-  }, [dispatch, token]);
+  }, [dispatch, token, state]);
 
   return (
     <WatchLaterContext.Provider value={{ state, dispatch }}>

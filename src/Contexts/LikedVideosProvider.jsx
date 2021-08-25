@@ -40,7 +40,7 @@ export const LikedVideosProvider = ({ children }) => {
         dispatch({ type: "FETCH_LIKED_VIDEOS_ERROR" });
       }
     })();
-  }, [dispatch, token]);
+  }, [dispatch, token, state]);
 
   return (
     <LikedVideosContext.Provider value={{ state, dispatch }}>

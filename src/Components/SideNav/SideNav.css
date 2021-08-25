@@ -13,3 +13,7 @@
 .far.fa-clock {
   padding-bottom: 2rem;
 }
+
+a:-webkit-any-link {
+  text-decoration: none;
+}

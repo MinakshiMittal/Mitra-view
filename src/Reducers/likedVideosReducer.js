@@ -13,6 +13,19 @@ export const likedVideosReducer = (state, action) => {
         error: "Something Went Wrong",
       };
 
+    case "ADD_TO_LIKED_VIDEOS":
+      console.log("reducer", action.payload.likedVideos);
+      return {
+        ...state,
+        likedVideos: [...action.payload.likedVideos],
+      };
+
+    case "REMOVE_FROM_LIKED_VIDEOS":
+      return {
+        ...state,
+        likedVideos: [...action.payload.likedVideos],
+      };
+
     default:
       return state;
   }

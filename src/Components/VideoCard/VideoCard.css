@@ -8,3 +8,11 @@
 .card-container:hover {
   box-shadow: 0.4px 0.4px 3px #f89dc0c7;
 }
+
+.card-with-badge-demo.video-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: min-content;
+}

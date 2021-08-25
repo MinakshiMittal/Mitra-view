@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }) => {
       const userLoginResponse = await loginService(email, password);
       if (userLoginResponse.status === 200) {
         loginUser(userLoginResponse.data);
-        navigate("/videos");
+        navigate("/");
       }
     } catch (error) {
       console.error(error);
@@ -79,7 +79,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("login");
     setLogin(false);
     setToken(null);
-    navigate("/");
+    navigate("/login");
   };
 
   return (

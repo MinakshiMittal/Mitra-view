@@ -13,6 +13,12 @@ export const historyReducer = (state, action) => {
         error: "Something Went Wrong",
       };
 
+    case "ADD_TO_HISTORY":
+      return {
+        ...state,
+        history: [...action.payload.history],
+      };
+
     default:
       return state;
   }
