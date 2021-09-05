@@ -15,7 +15,6 @@ export const Playlists = () => {
       </div>
       <div>
         {playlists.map((playlist) => {
-          console.log("playlist", playlist);
           return (
             <div key={playlist._id}>
               <h2>{playlist.name}</h2>

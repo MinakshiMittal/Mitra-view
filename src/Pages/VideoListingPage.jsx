@@ -5,7 +5,6 @@ export const VideoListingPage = () => {
   const {
     state: { videos },
   } = useVideos();
-  console.log(videos);
   return (
     <>
       {videos.map((video) => {

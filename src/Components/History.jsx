@@ -5,7 +5,6 @@ export const History = () => {
   const {
     state: { history },
   } = useHistory();
-  console.log("liked", history);
   return (
     <>
       <div>
@@ -15,7 +14,6 @@ export const History = () => {
       </div>
       <div>
         {history.map((video) => {
-          console.log("video", video);
           return <VideoCard video={video.video} noDetail key={video._id} />;
         })}
       </div>

@@ -5,7 +5,6 @@ export const LikedVideos = () => {
   const {
     state: { likedVideos },
   } = useLikedVideos();
-  console.log("liked", likedVideos);
   return (
     <>
       <div>
@@ -15,7 +14,6 @@ export const LikedVideos = () => {
       </div>
       <div>
         {likedVideos.map((video) => {
-          console.log("video", video);
           return <VideoCard video={video.video} noDetail key={video._id} />;
         })}
       </div>

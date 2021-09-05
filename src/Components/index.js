@@ -9,3 +9,4 @@ export { WatchLater } from "./WatchLater";
 export { History } from "./History";
 export { Playlists } from "./Playlists";
 export { PlaylistCard } from "./PlaylistCard";
+export { PlaylistModal } from "./PlaylistModal/PlaylistModal";

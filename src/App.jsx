@@ -2,8 +2,10 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Login, SignUp, VideoListingPage, VideoDetail, Library } from "./Pages";
 import { MainMenu, SideNav, PrivateRoute } from "./Components";
+import { useDataLoading } from "./hooks/useDataLoading";
 
 function App() {
+  useDataLoading();
   return (
     <div className="App">
       <header className="page-main-menu">

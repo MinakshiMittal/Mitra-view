@@ -7,8 +7,8 @@ import Watch from "../../assets/Watch.svg";
 export const Login = () => {
   const { isUserLogin, loginUserWithCredentials, logout } = useAuth();
 
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState("test@gmail.com");
+  const [password, setPassword] = useState("test");
 
   const navigate = useNavigate();
 
@@ -29,15 +29,17 @@ export const Login = () => {
           <input
             type="email"
             placeholder="Your email"
+            defaultValue={email}
             onChange={(event) => setEmail(event.target.value)}
           />
           <label>Password</label>
           <input
             type="password"
             placeholder="Enter your password"
+            defaultValue={password}
             onChange={(event) => setPassword(event.target.value)}
           />
-          <button class="button primary-btn" onClick={loginHandler}>
+          <button className="button primary-btn" onClick={loginHandler}>
             Log In
           </button>
           <p className="signup-content">

@@ -1,6 +1,8 @@
 import { useDislikedVideos, useLikedVideos } from "../Contexts";
 import { useLikedVideosActions } from "../hooks/useLikedVideosActions";
 import { useDislikedVideosActions } from "../hooks/useDislikedVideosActions";
+import { PlaylistModal } from "../Components";
+import "./VideoCard/VideoCard.css";
 
 export const VideoPlay = ({ video }) => {
   const {
@@ -9,9 +11,7 @@ export const VideoPlay = ({ video }) => {
   const {
     state: { dislikedVideos },
   } = useDislikedVideos();
-  // const {
-  //   state: { watchLater },
-  // } = useWatchLater();
+
   const { removeFromLikedVideos, addToLikedVideos } = useLikedVideosActions();
   const { removeFromDislikedVideos, addToDislikedVideos } =
     useDislikedVideosActions();
@@ -23,17 +23,36 @@ export const VideoPlay = ({ video }) => {
     );
   };
 
-  console.log(dislikedVideos);
-
   const isVideoDisliked = () => {
     return (
       dislikedVideos?.find(
-        (dislikedVideo) => dislikedVideo.video._id === video._id
+        (dislikedVideo) => dislikedVideo.video?._id === video?._id
       ) !== undefined
     );
   };
 
-  console.log("play", video);
+  const likeHandler = async (event) => {
+    event.preventDefault();
+    if (isVideoLiked()) {
+      return removeFromLikedVideos(video?._id);
+    }
+    if (isVideoDisliked()) {
+      await removeFromDislikedVideos(video?._id);
+    }
+    addToLikedVideos(video?._id);
+  };
+
+  const dislikeHandler = async (event) => {
+    event.preventDefault();
+    if (isVideoDisliked()) {
+      return removeFromDislikedVideos(video?._id);
+    }
+    if (isVideoLiked()) {
+      await removeFromLikedVideos(video?._id);
+    }
+    addToDislikedVideos(video?._id);
+  };
+
   return (
     <div
       style={{
@@ -49,25 +68,33 @@ export const VideoPlay = ({ video }) => {
         allow="autoplay"
         allowFullScreen
       ></iframe>
-      <i
-        className={!isVideoLiked() ? "far fa-thumbs-up" : "fas fa-thumbs-up"}
-        onClick={() => {
-          isVideoLiked()
-            ? removeFromLikedVideos(video._id)
-            : addToLikedVideos(video._id);
-        }}
-      ></i>
-      <i
-        className={
-          !isVideoDisliked() ? "far fa-thumbs-down" : "fas fa-thumbs-down"
-        }
-        onClick={() => {
-          isVideoDisliked()
-            ? removeFromDislikedVideos(video._id)
-            : addToDislikedVideos(video._id);
-        }}
-      ></i>
-      <i className="far fa-clock"></i>
+      <h1>{video?.name}</h1>
+      <div>
+        <i
+          title="Like"
+          className={!isVideoLiked() ? "far fa-thumbs-up" : "fas fa-thumbs-up"}
+          onClick={likeHandler}
+          // onClick={() => {
+          //   isVideoLiked()
+          //     ? removeFromLikedVideos(video._id)
+          //     : addToLikedVideos(video._id);
+          // }}
+        ></i>
+        <i
+          title="Dislike"
+          className={
+            !isVideoDisliked() ? "far fa-thumbs-down" : "fas fa-thumbs-down"
+          }
+          onClick={dislikeHandler}
+          // onClick={() => {
+          //   isVideoDisliked()
+          //     ? removeFromDislikedVideos(video._id)
+          //     : addToDislikedVideos(video._id);
+          // }}
+        ></i>
+        <i title="Watch Later" className="far fa-clock"></i>
+        <PlaylistModal />
+      </div>
     </div>
   );
 };

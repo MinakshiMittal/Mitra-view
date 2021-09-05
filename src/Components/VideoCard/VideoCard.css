@@ -16,3 +16,7 @@
   align-items: center;
   width: min-content;
 }
+
+[title]:hover::after {
+  background-color: black;
+}

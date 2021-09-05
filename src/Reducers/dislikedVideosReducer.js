@@ -16,7 +16,7 @@ export const dislikedVideosReducer = (state, action) => {
     case "ADD_TO_DISLIKED_VIDEOS":
       return {
         ...state,
-        dislikedVideos: [action.payload.dislikedVideos],
+        dislikedVideos: [...action.payload.dislikedVideos],
       };
 
     case "REMOVE_FROM_DISLIKED_VIDEOS":

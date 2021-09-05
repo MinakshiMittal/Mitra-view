@@ -5,7 +5,6 @@ export const WatchLater = () => {
   const {
     state: { watchLater },
   } = useWatchLater();
-  console.log("watch", watchLater);
   return (
     <>
       <div>
@@ -15,7 +14,6 @@ export const WatchLater = () => {
       </div>
       <div>
         {watchLater.map((video) => {
-          console.log("video", video);
           return <VideoCard video={video.video} noDetail key={video._id} />;
         })}
       </div>

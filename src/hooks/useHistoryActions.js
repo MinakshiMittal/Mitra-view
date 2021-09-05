@@ -19,8 +19,6 @@ export const useHistoryActions = () => {
         }
       );
 
-      console.log("add", response);
-
       if (response.status === 200) {
         historyDispatch({
           type: "ADD_TO_HISTORY",

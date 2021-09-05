@@ -5,7 +5,7 @@ export const usePlaylistsActions = () => {
   const { token } = useAuth();
   const { dispatch: playlistsDispatch } = usePlaylists();
 
-  const addToPlaylist = async (videoId) => {
+  const addPlaylist = async (videoId) => {
     try {
       const response = await axios.post(
         `https://mitra-view.mittalminakshi.repl.co/playlists`,
@@ -19,8 +19,6 @@ export const usePlaylistsActions = () => {
         }
       );
 
-      console.log("add", response);
-
       if (response.status === 200) {
         playlistsDispatch({
           type: "ADD_TO_PLAYLIST",
@@ -32,7 +30,7 @@ export const usePlaylistsActions = () => {
     }
   };
 
-  const removeFromPlaylist = async (videoId) => {
+  const removePlaylist = async (videoId) => {
     try {
       const response = await axios.delete(
         `https://mitra-view.mittalminakshi.repl.co/playlists/${videoId}`,
@@ -42,8 +40,6 @@ export const usePlaylistsActions = () => {
           },
         }
       );
-
-      console.log("remove", response);
 
       if (response.status === 200) {
         playlistsDispatch({
@@ -56,5 +52,5 @@ export const usePlaylistsActions = () => {
     }
   };
 
-  return { addToPlaylist, removeFromLikedVideos };
+  return { addPlaylist, removePlaylist };
 };

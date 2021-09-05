@@ -14,7 +14,6 @@ export const likedVideosReducer = (state, action) => {
       };
 
     case "ADD_TO_LIKED_VIDEOS":
-      console.log("reducer", action.payload.likedVideos);
       return {
         ...state,
         likedVideos: [...action.payload.likedVideos],

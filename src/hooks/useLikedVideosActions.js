@@ -26,7 +26,7 @@ export const useLikedVideosActions = () => {
         });
       }
     } catch (error) {
-      console.error(error);
+      console.error(error.response.data);
     }
   };
 
@@ -48,7 +48,7 @@ export const useLikedVideosActions = () => {
         });
       }
     } catch (error) {
-      console.error(error);
+      console.error(error.response.data);
     }
   };
 

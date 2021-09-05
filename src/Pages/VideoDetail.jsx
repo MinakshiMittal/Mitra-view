@@ -6,10 +6,8 @@ export const VideoDetail = () => {
   const {
     state: { videos },
   } = useVideos();
-  console.log(videos);
   const { videoId } = useParams();
   const video = videos?.find((video) => video._id === videoId);
-  console.log("videodetail", videos);
 
   return (
     <>

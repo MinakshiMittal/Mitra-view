@@ -19,8 +19,6 @@ export const useWatchLaterActions = () => {
         }
       );
 
-      console.log("add", response);
-
       if (response.status === 200) {
         likedVideosDispatch({
           type: "ADD_TO_WATCH_LATER",
@@ -42,8 +40,6 @@ export const useWatchLaterActions = () => {
           },
         }
       );
-
-      console.log("remove", response);
 
       if (response.status === 200) {
         watchLaterDispatch({

@@ -19,8 +19,6 @@ export const useDislikedVideosActions = () => {
         }
       );
 
-      console.log("add", response);
-
       if (response.status === 200) {
         dislikedVideosDispatch({
           type: "ADD_TO_DISLIKED_VIDEOS",
@@ -28,7 +26,7 @@ export const useDislikedVideosActions = () => {
         });
       }
     } catch (error) {
-      console.error(error);
+      console.error(error.response.data);
     }
   };
 
@@ -43,8 +41,6 @@ export const useDislikedVideosActions = () => {
         }
       );
 
-      console.log("remove", response);
-
       if (response.status === 200) {
         dislikedVideosDispatch({
           type: "REMOVE_FROM_DISLIKED_VIDEOS",
@@ -52,7 +48,7 @@ export const useDislikedVideosActions = () => {
         });
       }
     } catch (error) {
-      console.error(error);
+      console.error(error.response.data);
     }
   };
 

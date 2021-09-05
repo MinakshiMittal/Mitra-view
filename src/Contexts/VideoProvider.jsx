@@ -19,7 +19,6 @@ export const VideoProvider = ({ children }) => {
         const response = await axios.get(
           "https://mitra-view.mittalminakshi.repl.co/videos"
         );
-        console.log("response", response);
         if (response.status === 200) {
           dispatch({
             type: "FETCH_VIDEOS_SUCCESS",
