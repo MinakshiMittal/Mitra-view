@@ -1,6 +1,7 @@
-import { useDislikedVideos, useLikedVideos } from "../Contexts";
+import { useDislikedVideos, useLikedVideos, useWatchLater } from "../Contexts";
 import { useLikedVideosActions } from "../hooks/useLikedVideosActions";
 import { useDislikedVideosActions } from "../hooks/useDislikedVideosActions";
+import { useWatchLaterActions } from "../hooks/useWatchLaterActions";
 import { PlaylistModal } from "../Components";
 import "./VideoCard/VideoCard.css";
 
@@ -12,14 +13,28 @@ export const VideoPlay = ({ video }) => {
     state: { dislikedVideos },
   } = useDislikedVideos();
 
+  const {
+    state: { watchLaterVideos },
+  } = useWatchLater();
+
   const { removeFromLikedVideos, addToLikedVideos } = useLikedVideosActions();
   const { removeFromDislikedVideos, addToDislikedVideos } =
     useDislikedVideosActions();
+  const { removeFromWatchLater, addToWatchLater } = useWatchLaterActions();
 
   const isVideoLiked = () => {
     return (
-      likedVideos?.find((likedVideo) => likedVideo.video._id === video._id) !==
-      undefined
+      likedVideos?.find(
+        (likedVideo) => likedVideo.video?._id === video?._id
+      ) !== undefined
+    );
+  };
+
+  const isVideoInWatchLater = () => {
+    return (
+      watchLaterVideos?.find(
+        (watchLaterVideo) => watchLaterVideo.video?._id === video?._id
+      ) !== undefined
     );
   };
 
@@ -74,11 +89,6 @@ export const VideoPlay = ({ video }) => {
           title="Like"
           className={!isVideoLiked() ? "far fa-thumbs-up" : "fas fa-thumbs-up"}
           onClick={likeHandler}
-          // onClick={() => {
-          //   isVideoLiked()
-          //     ? removeFromLikedVideos(video._id)
-          //     : addToLikedVideos(video._id);
-          // }}
         ></i>
         <i
           title="Dislike"
@@ -86,14 +96,17 @@ export const VideoPlay = ({ video }) => {
             !isVideoDisliked() ? "far fa-thumbs-down" : "fas fa-thumbs-down"
           }
           onClick={dislikeHandler}
-          // onClick={() => {
-          //   isVideoDisliked()
-          //     ? removeFromDislikedVideos(video._id)
-          //     : addToDislikedVideos(video._id);
-          // }}
         ></i>
-        <i title="Watch Later" className="far fa-clock"></i>
-        <PlaylistModal />
+        <i
+          title="Watch Later"
+          className={isVideoInWatchLater() ? "far fa-clock" : "fas fa-clock"}
+          onClick={
+            isVideoInWatchLater()
+              ? removeFromWatchLater(video?._id)
+              : addToWatchLater(video?._id)
+          }
+        ></i>
+        <PlaylistModal video={video} />
       </div>
     </div>
   );

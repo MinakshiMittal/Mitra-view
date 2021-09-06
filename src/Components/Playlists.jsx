@@ -1,11 +1,12 @@
 import { usePlaylists } from "../Contexts";
 import { VideoCard } from "../Components";
+import { usePlaylistsActions } from "../hooks/usePlaylistActions";
 
 export const Playlists = () => {
   const {
     state: { playlists },
   } = usePlaylists();
-  console.log("liked", playlists);
+  const { removePlaylist } = usePlaylistsActions();
   return (
     <>
       <div>
@@ -17,11 +18,16 @@ export const Playlists = () => {
         {playlists.map((playlist) => {
           return (
             <div key={playlist._id}>
-              <h2>{playlist.name}</h2>
+              <div>
+                <h2>{playlist.name}</h2>
+                <i
+                  class="fas fa-trash"
+                  onClick={() => removePlaylist(playlist?._id)}
+                ></i>
+                {/* <i class="fas fa-edit"></i> */}
+              </div>
               {playlist.videos.map((video) => {
-                return (
-                  <VideoCard video={video.video} noDetail key={video._id} />
-                );
+                return <VideoCard video={video} noDetail key={video._id} />;
               })}
             </div>
           );

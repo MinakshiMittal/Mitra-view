@@ -17,12 +17,6 @@ export const MainMenu = () => {
       >
         MITRA PLAY
       </div>
-      {/* <a href="/" style={{ color: "#c34d76" }} className="get-started">
-          Get Started
-        </a> */}
-      {/* <a href="/" style={{ color: "#c34d76" }} className="docs">
-          Docs
-        </a> */}
       {isUserLogin && (
         <i
           className="fas fa-sign-out-alt"

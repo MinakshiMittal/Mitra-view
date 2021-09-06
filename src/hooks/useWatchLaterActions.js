@@ -20,7 +20,7 @@ export const useWatchLaterActions = () => {
       );
 
       if (response.status === 200) {
-        likedVideosDispatch({
+        watchLaterDispatch({
           type: "ADD_TO_WATCH_LATER",
           payload: { watchLater: response.data.library.watchLater },
         });

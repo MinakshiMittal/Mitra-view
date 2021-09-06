@@ -1,9 +1,9 @@
-import { LikedVideos, WatchLater, History, Playlists } from "../../Components";
+import { LikedVideos, WatchLater, Playlists } from "../../Components";
 
 export const Library = () => {
   return (
     <>
-      <History />
+      {/* <History /> */}
       <LikedVideos />
       <WatchLater />
       <Playlists />
