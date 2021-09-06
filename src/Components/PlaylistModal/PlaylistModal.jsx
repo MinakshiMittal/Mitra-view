@@ -10,14 +10,6 @@ export const PlaylistModal = ({ video }) => {
     usePlaylistsActions();
   const [name, setName] = useState("");
 
-  // const addToPlaylistHandler = (event, playlist) => {
-  //   console.log(event);
-  //   if (event.target.checked) {
-  //     return addToPlaylist(playlist?._id, video?._id);
-  //   }
-  //   return removeFromPlaylist(playlist?._id, video?._id);
-  // };
-
   return (
     <>
       <h1>Add to playlist</h1>
@@ -45,7 +37,6 @@ export const PlaylistModal = ({ video }) => {
           );
         };
 
-        console.log(isVideoInPlaylist());
         return (
           <label key={playlist._id}>
             <input
@@ -53,10 +44,8 @@ export const PlaylistModal = ({ video }) => {
               defaultChecked={isVideoInPlaylist()}
               onChange={(event) => {
                 if (event.target.checked) {
-                  console.log("is checked", event.target.checked);
                   return addToPlaylist(playlist?._id, video?._id);
                 }
-                console.log("is checked", event.target.checked);
                 return removeFromPlaylist(playlist?._id, video?._id);
               }}
             />

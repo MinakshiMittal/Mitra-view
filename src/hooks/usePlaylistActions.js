@@ -64,7 +64,6 @@ export const usePlaylistsActions = () => {
           },
         }
       );
-      console.log(response);
       if (response.status === 200) {
         playlistsDispatch({
           type: "REMOVE_FROM_PLAYLISTS",
@@ -87,7 +86,6 @@ export const usePlaylistsActions = () => {
           },
         }
       );
-      console.log(response);
       if (response.status === 200) {
         playlistsDispatch({
           type: "REMOVE_FROM_PLAYLISTS",
@@ -109,7 +107,6 @@ export const usePlaylistsActions = () => {
           },
         }
       );
-      console.log(response);
 
       if (response.status === 200) {
         playlistsDispatch({

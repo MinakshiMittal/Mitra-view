@@ -14,7 +14,7 @@ export const VideoPlay = ({ video }) => {
   } = useDislikedVideos();
 
   const {
-    state: { watchLaterVideos },
+    state: { watchLater },
   } = useWatchLater();
 
   const { removeFromLikedVideos, addToLikedVideos } = useLikedVideosActions();
@@ -32,7 +32,7 @@ export const VideoPlay = ({ video }) => {
 
   const isVideoInWatchLater = () => {
     return (
-      watchLaterVideos?.find(
+      watchLater?.find(
         (watchLaterVideo) => watchLaterVideo.video?._id === video?._id
       ) !== undefined
     );
@@ -99,8 +99,8 @@ export const VideoPlay = ({ video }) => {
         ></i>
         <i
           title="Watch Later"
-          className={isVideoInWatchLater() ? "far fa-clock" : "fas fa-clock"}
-          onClick={
+          className={!isVideoInWatchLater() ? "far fa-clock" : "fas fa-clock"}
+          onClick={() =>
             isVideoInWatchLater()
               ? removeFromWatchLater(video?._id)
               : addToWatchLater(video?._id)

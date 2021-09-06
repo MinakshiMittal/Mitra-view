@@ -21,7 +21,7 @@ export const Playlists = () => {
               <div>
                 <h2>{playlist.name}</h2>
                 <i
-                  class="fas fa-trash"
+                  className="fas fa-trash"
                   onClick={() => removePlaylist(playlist?._id)}
                 ></i>
                 {/* <i class="fas fa-edit"></i> */}
