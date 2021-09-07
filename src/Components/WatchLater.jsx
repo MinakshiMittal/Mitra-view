@@ -7,12 +7,24 @@ export const WatchLater = () => {
   } = useWatchLater();
   return (
     <>
-      <div>
-        <h1 style={{ color: "white", textAlign: "center", display: "block" }}>
-          Watch Later
-        </h1>
+      <div
+        style={{
+          color: "white",
+          marginLeft: "1rem",
+          width: "100%",
+          textAlign: "center",
+        }}
+      >
+        <h1>Watch Later</h1>
       </div>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          marginLeft: "1rem",
+          flexWrap: "wrap",
+          width: "100%",
+        }}
+      >
         {watchLater.map((video) => {
           return <VideoCard video={video.video} noDetail key={video._id} />;
         })}

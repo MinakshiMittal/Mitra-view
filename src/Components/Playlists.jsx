@@ -9,10 +9,15 @@ export const Playlists = () => {
   const { removePlaylist } = usePlaylistsActions();
   return (
     <>
-      <div>
-        <h1 style={{ color: "white", textAlign: "center", display: "block" }}>
-          Playlists
-        </h1>
+      <div
+        style={{
+          color: "white",
+          textAlign: "center",
+          display: "block",
+          width: "100%",
+        }}
+      >
+        <h1>Playlists</h1>
       </div>
       <div>
         {playlists.map((playlist) => {

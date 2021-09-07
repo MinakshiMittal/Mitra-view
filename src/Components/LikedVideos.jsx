@@ -7,12 +7,17 @@ export const LikedVideos = () => {
   } = useLikedVideos();
   return (
     <>
-      <div>
-        <h1 style={{ color: "white", textAlign: "center", display: "block" }}>
-          Liked Videos
-        </h1>
+      <div
+        style={{
+          color: "white",
+          marginLeft: "1rem",
+          width: "100%",
+          textAlign: "center",
+        }}
+      >
+        <h1>Liked Videos</h1>
       </div>
-      <div>
+      <div style={{ display: "flex", flexWrap: "wrap", marginLeft: "1rem" }}>
         {likedVideos.map((video) => {
           return <VideoCard video={video.video} noDetail key={video._id} />;
         })}
