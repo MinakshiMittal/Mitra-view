@@ -23,7 +23,6 @@ export const VideoPlay = ({ video }) => {
     useDislikedVideosActions();
   const { removeFromWatchLater, addToWatchLater } = useWatchLaterActions();
   const [display, setDisplay] = useState("none");
-  const [opacity, setOpacity] = useState(1);
 
   const isVideoLiked = () => {
     return (
@@ -118,7 +117,6 @@ export const VideoPlay = ({ video }) => {
             style={{ position: "relative", color: "white" }}
             setDisplay={setDisplay}
             display={display}
-            setOpacity={setOpacity}
           />
           {display === "block" && (
             <PlaylistModal video={video} display={display} />
