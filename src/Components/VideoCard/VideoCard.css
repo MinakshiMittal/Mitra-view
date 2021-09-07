@@ -17,6 +17,16 @@
   width: min-content;
 }
 
-[title]:hover::after {
-  background-color: black;
+.video-actions-container {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fa-thumbs-up,
+.fa-thumbs-down,
+.fa-clock {
+  color: #c34d76;
+  font-size: 2rem;
 }

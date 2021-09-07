@@ -23,17 +23,27 @@ export const Playlists = () => {
         {playlists.map((playlist) => {
           return (
             <div key={playlist._id}>
-              <div>
-                <h2>{playlist.name}</h2>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: "#c34d76",
+                  marginLeft: "1rem",
+                }}
+              >
+                <h2 style={{ marginRight: "2rem" }}>{playlist.name}</h2>
                 <i
+                  style={{ opacity: 0.5 }}
                   className="fas fa-trash"
                   onClick={() => removePlaylist(playlist?._id)}
                 ></i>
                 {/* <i class="fas fa-edit"></i> */}
               </div>
-              {playlist.videos.map((video) => {
-                return <VideoCard video={video} noDetail key={video._id} />;
-              })}
+              <div style={{ display: "flex", flexWrap: "wrap" }}>
+                {playlist.videos.map((video) => {
+                  return <VideoCard video={video} noDetail key={video._id} />;
+                })}
+              </div>
             </div>
           );
         })}

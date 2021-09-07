@@ -1,0 +1,40 @@
+.add-to-playlist-container {
+  position: absolute;
+  right: -25%;
+  width: 30%;
+  bottom: 0;
+  border: 3px solid #c34d76;
+  border-radius: 0.5rem;
+  margin: 2rem;
+  padding: 1rem;
+  background-color: #161625;
+}
+
+.playlist-create {
+  width: 80%;
+  margin: 0;
+}
+
+.button.primary-btn.playlist {
+  width: 15%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+}
+
+.create-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+label {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.playlist-checkbox {
+  width: 10%;
+}

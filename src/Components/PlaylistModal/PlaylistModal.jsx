@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { usePlaylists } from "../../Contexts";
 import { usePlaylistsActions } from "../../hooks/usePlaylistActions";
+import "./PlaylistModal.css";
 
-export const PlaylistModal = ({ video }) => {
+export const PlaylistModal = ({ video, display }) => {
   const {
     state: { playlists },
   } = usePlaylists();
@@ -11,23 +12,26 @@ export const PlaylistModal = ({ video }) => {
   const [name, setName] = useState("");
 
   return (
-    <>
-      <h1>Add to playlist</h1>
-      <input
-        type="text"
-        placeholder="Create playlist.."
-        value={name}
-        onChange={(event) => setName(event.target.value)}
-      />
-      <button
-        className="button primary-btn"
-        onClick={() => {
-          addPlaylist(name, video?._id);
-          setName("");
-        }}
-      >
-        +
-      </button>
+    <div className="add-to-playlist-container" style={{ display }}>
+      {/* <h1>Add to playlist</h1> */}
+      <div className="create-container">
+        <input
+          className="playlist-create"
+          type="text"
+          placeholder="Create playlist.."
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+        <button
+          className="button primary-btn playlist"
+          onClick={() => {
+            addPlaylist(name, video?._id);
+            setName("");
+          }}
+        >
+          +
+        </button>
+      </div>
       {playlists.map((playlist) => {
         const isVideoInPlaylist = () => {
           return (
@@ -40,6 +44,7 @@ export const PlaylistModal = ({ video }) => {
         return (
           <label key={playlist._id}>
             <input
+              className="playlist-checkbox"
               type="checkbox"
               defaultChecked={isVideoInPlaylist()}
               onChange={(event) => {
@@ -53,6 +58,6 @@ export const PlaylistModal = ({ video }) => {
           </label>
         );
       })}
-    </>
+    </div>
   );
 };

@@ -1,11 +1,15 @@
-export const PlaylistIcon = () => {
+export const PlaylistIcon = ({ setDisplay, display }) => {
   return (
     <lord-icon
+      title="Add To Playlist"
       src="https://cdn.lordicon.com//vnxmkidq.json"
       trigger="hover"
-      colors="primary:#ffffff,secondary:#ffffff"
-      stroke="100"
-      style={{ width: "50px", height: "50px", paddingBottom: "2.3rem" }}
+      colors="primary:#c34d76,secondary:#ffffff"
+      stroke="110"
+      style={{ width: "3.3rem", height: "3.3rem" }}
+      onClick={() =>
+        display === "none" ? setDisplay("block") : setDisplay("none")
+      }
     ></lord-icon>
   );
 };
