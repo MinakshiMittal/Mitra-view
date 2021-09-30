@@ -6,7 +6,7 @@ export const PlaylistIcon = ({ setDisplay, display }) => {
       trigger="hover"
       colors="primary:#c34d76,secondary:#ffffff"
       stroke="110"
-      style={{ width: "3.3rem", height: "3.3rem" }}
+      style={{ width: "3.3rem", height: "3.3rem", cursor: "pointer" }}
       onClick={() =>
         display === "none" ? setDisplay("block") : setDisplay("none")
       }

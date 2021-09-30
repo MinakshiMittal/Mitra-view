@@ -1,0 +1,16 @@
+.alert-demo {
+  position: fixed;
+  bottom: 0.5rem;
+  left: 0;
+  margin-left: 1rem;
+  z-index: 4;
+}
+
+.fa-times {
+  font-size: 1.1rem;
+  opacity: 0.3;
+}
+
+.fa-times:hover {
+  opacity: 1;
+}

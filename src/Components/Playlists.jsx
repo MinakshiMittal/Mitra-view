@@ -1,5 +1,5 @@
 import { usePlaylists } from "../Contexts";
-import { VideoCard } from "../Components";
+import { PlaylistVideoCard } from "../Components";
 import { usePlaylistsActions } from "../hooks/usePlaylistActions";
 
 export const Playlists = () => {
@@ -33,7 +33,7 @@ export const Playlists = () => {
               >
                 <h2 style={{ marginRight: "2rem" }}>{playlist.name}</h2>
                 <i
-                  style={{ opacity: 0.5 }}
+                  style={{ opacity: 0.5, cursor: "pointer" }}
                   className="fas fa-trash"
                   onClick={() => removePlaylist(playlist?._id)}
                 ></i>
@@ -41,7 +41,14 @@ export const Playlists = () => {
               </div>
               <div style={{ display: "flex", flexWrap: "wrap" }}>
                 {playlist.videos.map((video) => {
-                  return <VideoCard video={video} noDetail key={video._id} />;
+                  return (
+                    <PlaylistVideoCard
+                      video={video}
+                      noDetail
+                      key={video._id}
+                      playlistId={playlist?._id}
+                    />
+                  );
                 })}
               </div>
             </div>

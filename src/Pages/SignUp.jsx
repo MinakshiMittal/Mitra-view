@@ -1,13 +1,15 @@
-import { useAuth } from "../Contexts";
+import { useAuth, useLoader } from "../Contexts";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Watch from "../assets/Watch.svg";
+import { Loader } from "../Components";
 
 export const SignUp = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const { loader, setLoader } = useLoader();
 
   const navigate = useNavigate();
 
@@ -15,6 +17,7 @@ export const SignUp = () => {
 
   const signUpHandler = async (event) => {
     event.preventDefault();
+    setLoader("loading");
     signUpUserWithDetails(firstName, lastName, email, password);
   };
   return (
@@ -50,7 +53,7 @@ export const SignUp = () => {
             onChange={(event) => setPassword(event.target.value)}
           />
           <button class="button primary-btn" onClick={signUpHandler}>
-            Sign Up
+            {loader === "loading" ? <Loader /> : "Sign Up"}
           </button>
           <p className="login-content">
             Already have an account?{" "}

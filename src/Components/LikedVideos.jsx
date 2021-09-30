@@ -1,10 +1,12 @@
 import { useLikedVideos } from "../Contexts";
-import { VideoCard } from "../Components";
+import { LibraryVideoCard } from "../Components";
+import { useLikedVideosActions } from "../hooks/useLikedVideosActions";
 
 export const LikedVideos = () => {
   const {
     state: { likedVideos },
   } = useLikedVideos();
+  const { removeFromLikedVideos } = useLikedVideosActions();
   return (
     <>
       <div
@@ -19,7 +21,14 @@ export const LikedVideos = () => {
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", marginLeft: "1rem" }}>
         {likedVideos.map((video) => {
-          return <VideoCard video={video.video} noDetail key={video._id} />;
+          return (
+            <LibraryVideoCard
+              video={video.video}
+              noDetail
+              key={video._id}
+              removeVideo={removeFromLikedVideos}
+            />
+          );
         })}
       </div>
     </>

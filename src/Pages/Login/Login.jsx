@@ -1,19 +1,21 @@
 import "./Login.css";
-import { useAuth } from "../../Contexts";
+import { useAuth, useLoader } from "../../Contexts";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Watch from "../../assets/Watch.svg";
+import { Loader } from "../../Components";
 
 export const Login = () => {
   const { isUserLogin, loginUserWithCredentials, logout } = useAuth();
-
   const [email, setEmail] = useState("test@gmail.com");
   const [password, setPassword] = useState("test");
+  const { loader, setLoader } = useLoader();
 
   const navigate = useNavigate();
 
   const loginHandler = (event) => {
     event.preventDefault();
+    setLoader("loading");
     isUserLogin ? logout() : loginUserWithCredentials(email, password);
   };
 
@@ -40,7 +42,7 @@ export const Login = () => {
             onChange={(event) => setPassword(event.target.value)}
           />
           <button className="button primary-btn" onClick={loginHandler}>
-            Log In
+            {loader === "loading" ? <Loader /> : "Log In"}
           </button>
           <p className="signup-content">
             Create a new account.{" "}

@@ -1,11 +1,13 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Login, SignUp, VideoListingPage, VideoDetail, Library } from "./Pages";
-import { MainMenu, SideNav, PrivateRoute } from "./Components";
+import { MainMenu, SideNav, PrivateRoute, Toast } from "./Components";
 import { useDataLoading } from "./hooks/useDataLoading";
+import { useToast } from "./Contexts";
 
 function App() {
   useDataLoading();
+  const { toastDisplay } = useToast();
   return (
     <div className="App">
       <header className="page-main-menu">
@@ -31,6 +33,7 @@ function App() {
           <PrivateRoute path="/library" element={<Library />} />
         </Routes>
       </div>
+      {toastDisplay === "block" && <Toast />}
     </div>
   );
 }

@@ -91,12 +91,14 @@ export const VideoPlay = ({ video }) => {
         <div className="video-actions-container">
           <i
             title="Like"
+            style={{ cursor: "pointer" }}
             className={
               !isVideoLiked() ? "far fa-thumbs-up" : "fas fa-thumbs-up"
             }
             onClick={likeHandler}
           ></i>
           <i
+            style={{ cursor: "pointer" }}
             title="Dislike"
             className={
               !isVideoDisliked() ? "far fa-thumbs-down" : "fas fa-thumbs-down"
@@ -104,6 +106,7 @@ export const VideoPlay = ({ video }) => {
             onClick={dislikeHandler}
           ></i>
           <i
+            style={{ cursor: "pointer", padding: 0 }}
             title="Watch Later"
             className={!isVideoInWatchLater() ? "far fa-clock" : "fas fa-clock"}
             onClick={() =>
@@ -114,7 +117,7 @@ export const VideoPlay = ({ video }) => {
           ></i>
 
           <PlaylistIcon
-            style={{ position: "relative", color: "white" }}
+            style={{ position: "relative", color: "white", cursor: "pointer" }}
             setDisplay={setDisplay}
             display={display}
           />

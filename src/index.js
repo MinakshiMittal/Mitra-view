@@ -12,26 +12,32 @@ import {
   LikedVideosProvider,
   DislikedVideosProvider,
   PlaylistsProvider,
+  LoaderProvider,
+  ToastProvider,
 } from "./Contexts";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <AuthProvider>
-        <VideoProvider>
-          <HistoryProvider>
-            <LikedVideosProvider>
-              <PlaylistsProvider>
-                <DislikedVideosProvider>
-                  <WatchLaterProvider>
-                    <App />
-                  </WatchLaterProvider>
-                </DislikedVideosProvider>
-              </PlaylistsProvider>
-            </LikedVideosProvider>
-          </HistoryProvider>
-        </VideoProvider>
-      </AuthProvider>
+      <LoaderProvider>
+        <ToastProvider>
+          <AuthProvider>
+            <VideoProvider>
+              <HistoryProvider>
+                <LikedVideosProvider>
+                  <PlaylistsProvider>
+                    <DislikedVideosProvider>
+                      <WatchLaterProvider>
+                        <App />
+                      </WatchLaterProvider>
+                    </DislikedVideosProvider>
+                  </PlaylistsProvider>
+                </LikedVideosProvider>
+              </HistoryProvider>
+            </VideoProvider>
+          </AuthProvider>
+        </ToastProvider>
+      </LoaderProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

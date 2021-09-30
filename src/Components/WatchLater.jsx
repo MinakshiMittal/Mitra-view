@@ -1,10 +1,12 @@
 import { useWatchLater } from "../Contexts";
-import { VideoCard } from "../Components";
+import { LibraryVideoCard } from "../Components";
+import { useWatchLaterActions } from "../hooks/useWatchLaterActions";
 
 export const WatchLater = () => {
   const {
     state: { watchLater },
   } = useWatchLater();
+  const { removeFromWatchLater } = useWatchLaterActions();
   return (
     <>
       <div
@@ -26,7 +28,14 @@ export const WatchLater = () => {
         }}
       >
         {watchLater.map((video) => {
-          return <VideoCard video={video.video} noDetail key={video._id} />;
+          return (
+            <LibraryVideoCard
+              video={video.video}
+              noDetail
+              key={video._id}
+              removeVideo={removeFromWatchLater}
+            />
+          );
         })}
       </div>
     </>

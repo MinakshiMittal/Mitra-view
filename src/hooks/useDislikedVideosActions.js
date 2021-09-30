@@ -1,12 +1,15 @@
 import axios from "axios";
-import { useAuth, useDislikedVideos } from "../Contexts";
+import { useAuth, useDislikedVideos, useToast } from "../Contexts";
 
 export const useDislikedVideosActions = () => {
   const { token } = useAuth();
   const { dispatch: dislikedVideosDispatch } = useDislikedVideos();
+  const { setToastDisplay, setToastMessage } = useToast();
 
   const addToDislikedVideos = async (videoId) => {
     try {
+      setToastDisplay("block");
+      setToastMessage("Adding To Disliked Videos...");
       const response = await axios.post(
         `https://mitra-view.mittalminakshi.repl.co/disliked-videos`,
         {

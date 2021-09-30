@@ -2,6 +2,7 @@ export const HomeIcon = () => {
   return (
     <lord-icon
       src="https://cdn.lordicon.com/gmzxduhd.json"
+      title="Home"
       trigger="hover"
       stroke="100"
       colors="primary:#c34d76,secondary:#ffffff"

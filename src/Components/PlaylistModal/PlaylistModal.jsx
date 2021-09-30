@@ -13,7 +13,6 @@ export const PlaylistModal = ({ video, display }) => {
 
   return (
     <div className="add-to-playlist-container" style={{ display }}>
-      {/* <h1>Add to playlist</h1> */}
       <div className="create-container">
         <input
           className="playlist-create"
@@ -32,6 +31,12 @@ export const PlaylistModal = ({ video, display }) => {
           +
         </button>
       </div>
+      <button
+        className="card-dismiss-button"
+        // onClick={() => removeFromPlaylist(playlistId, video?._id)}
+      >
+        <i className="fas fa-lg fa-times"></i>
+      </button>
       {playlists.map((playlist) => {
         const isVideoInPlaylist = () => {
           return (

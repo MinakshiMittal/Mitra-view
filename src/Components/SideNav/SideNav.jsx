@@ -16,7 +16,7 @@ export const SideNav = () => {
         <HomeIcon className="icon-style" />
       </Link>
       <Link to="/library">
-        <i className="fas fa-photo-video icon-style"></i>
+        <i title="Library" className="fas fa-photo-video icon-style"></i>
       </Link>
       {/* <Link to="/liked-videos" style={{ textDecoration: "none" }}>
         <i className="far fa-thumbs-up icon-style"></i>

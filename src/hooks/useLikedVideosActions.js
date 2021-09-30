@@ -1,12 +1,15 @@
 import axios from "axios";
-import { useAuth, useLikedVideos } from "../Contexts";
+import { useAuth, useLikedVideos, useToast } from "../Contexts";
 
 export const useLikedVideosActions = () => {
   const { token } = useAuth();
   const { dispatch: likedVideosDispatch } = useLikedVideos();
+  const { setToastDisplay, setToastMessage } = useToast();
 
   const addToLikedVideos = async (videoId) => {
     try {
+      setToastDisplay("block");
+      setToastMessage("Adding To Liked Videos...");
       const response = await axios.post(
         `https://mitra-view.mittalminakshi.repl.co/liked-videos`,
         {

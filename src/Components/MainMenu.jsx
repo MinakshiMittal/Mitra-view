@@ -10,10 +10,18 @@ export const MainMenu = () => {
         src="https://cdn.pixabay.com/photo/2018/04/03/00/48/fingers-3285615_1280.png"
         alt="logo"
         className="hero-image"
+        onClick={() => navigate("/")}
+        style={{ cursor: "pointer" }}
       />
       <div
-        style={{ color: "white", fontSize: "2rem", flexGrow: "1" }}
+        style={{
+          color: "white",
+          fontSize: "2rem",
+          flexGrow: "1",
+          cursor: "pointer",
+        }}
         className="hero-name"
+        onClick={() => navigate("/")}
       >
         MITRA PLAY
       </div>

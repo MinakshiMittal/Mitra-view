@@ -1,6 +1,8 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLoader } from "../Contexts";
+import { useToast } from "./ToastProvider";
 
 export const AuthContext = createContext();
 
@@ -35,6 +37,8 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(savedToken);
   const [userDetails, setUserDetails] = useState(userId);
   const navigate = useNavigate();
+  const { setLoader } = useLoader();
+  const { setToastDisplay, setToastMessage } = useToast();
 
   const signUpUserWithDetails = async (
     firstName,
@@ -68,6 +72,9 @@ export const AuthProvider = ({ children }) => {
   const loginUser = ({ token, userId }) => {
     setToken(token);
     setLogin(true);
+    setLoader("not loading");
+    setToastDisplay("block");
+    setToastMessage("Successfully Logged In");
     setUserDetails(userId);
     localStorage.setItem(
       "login",
