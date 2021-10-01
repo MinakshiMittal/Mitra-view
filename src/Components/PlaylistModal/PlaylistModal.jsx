@@ -3,13 +3,15 @@ import { usePlaylists } from "../../Contexts";
 import { usePlaylistsActions } from "../../hooks/usePlaylistActions";
 import "./PlaylistModal.css";
 
-export const PlaylistModal = ({ video, display }) => {
+export const PlaylistModal = ({ video, display, setDisplay }) => {
+  console.log(display);
   const {
     state: { playlists },
   } = usePlaylists();
   const { addPlaylist, addToPlaylist, removeFromPlaylist } =
     usePlaylistsActions();
   const [name, setName] = useState("");
+  console.log(display);
 
   return (
     <div className="add-to-playlist-container" style={{ display }}>
@@ -34,6 +36,7 @@ export const PlaylistModal = ({ video, display }) => {
       <button
         className="card-dismiss-button"
         // onClick={() => removeFromPlaylist(playlistId, video?._id)}
+        onClick={() => setDisplay("none")}
       >
         <i className="fas fa-lg fa-times"></i>
       </button>

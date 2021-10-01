@@ -122,7 +122,11 @@ export const VideoPlay = ({ video }) => {
             display={display}
           />
           {display === "block" && (
-            <PlaylistModal video={video} display={display} />
+            <PlaylistModal
+              video={video}
+              display={display}
+              setDisplay={setDisplay}
+            />
           )}
         </div>
       </div>
