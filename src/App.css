@@ -49,3 +49,13 @@ iframe {
 .video-image:hover {
   opacity: 0.2;
 }
+
+@media (max-width: 600px) {
+  .page-main-menu {
+    z-index: 4;
+  }
+
+  .component-list {
+    width: 14%;
+  }
+}

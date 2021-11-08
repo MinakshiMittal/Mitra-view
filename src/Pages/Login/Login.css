@@ -81,3 +81,33 @@ label {
 .component-display {
   justify-content: flex-start;
 }
+
+@media (max-width: 600px) {
+  .login-page {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .background-image-container > img {
+    height: auto;
+    max-width: 80%;
+    margin-left: 3rem;
+  }
+
+  .form-container {
+    right: 0.7rem;
+    width: 80%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-top: 12rem;
+  }
+
+  .login-form {
+    width: 85%;
+  }
+
+  input {
+    width: inherit;
+  }
+}
